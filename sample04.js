@@ -86,6 +86,7 @@ switch (yystate) {
 case 1:
 
           this.$ = $$[$0];
+          yy.Node(0,1);
           return this.$;
         
 break;

@@ -5,6 +5,7 @@ ALL_QUERIES:
         QUERY
         {
           $$ = $1;
+          yy.Node(0,1);
           return $$;
         }
 		;
