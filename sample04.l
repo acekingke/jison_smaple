@@ -1,4 +1,5 @@
 %s FROM_CLAUSE REGEX_CONDITION
+%options case-insensitive
 %x IN_REGEX
 
 %%
@@ -68,10 +69,10 @@
 ";"                      { return yytext; }
 \s+         {/* skip whitespace */}
 
-(['](\\.|[^']|\\\')*?['])+                  	return 'STRING'
+(['](\\.|[^']|\\\')*?['])+                  	return 'STRING_VALUE'
 ([0-9]+|[0-9]*\.[0-9]+|[0-9]+\.[0-9]*)[usmhdw]    {  return 'DURATION'; }
 [0-9]*\.[0-9]+|[0-9]+\.[0-9]*   				 {  return 'FLOAT_VALUE'; }
 [a-zA-Z0-9_][a-zA-Z0-9._-]*  					{ return "SIMPLE_NAME"; }
-[:\[a-zA-Z0-9_][:\[\]a-zA-Z0-9._-]*   			{return  "INTO_NAME";}
+[:\[a-zA-Z0-9_][:\[\]a-zA-Z0-9._-]*   			{return  "TABLE_NAME";}
 '<*><<EOF>>' 	 return 'EOF'
 %%

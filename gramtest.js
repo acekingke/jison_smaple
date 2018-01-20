@@ -4,5 +4,5 @@ yy.Node = function (arg1, arg2) {
 	// body...
 	console.log("node");
 }
-let x = parser.parse("select 'X'")
+let x = parser.parse("select 'X' FROM DUAL")
 console.log(x);

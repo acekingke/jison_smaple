@@ -72,12 +72,12 @@
   }
 */
 var sample04 = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,8],$V1=[1,10];
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,17],$V1=[1,18],$V2=[1,15],$V3=[1,16],$V4=[1,8],$V5=[1,9],$V6=[1,10],$V7=[1,11],$V8=[1,13],$V9=[1,21],$Va=[11,14,23,26,27],$Vb=[1,22],$Vc=[1,23],$Vd=[1,24],$Ve=[1,25],$Vf=[11,14,23,26,27,31,46,47,48,49],$Vg=[11,14,23,24,26,27,31,46,47,48,49],$Vh=[11,27],$Vi=[11,24,27],$Vj=[11,14,23,26,27,31,48,49],$Vk=[1,45],$Vl=[1,46],$Vm=[1,49],$Vn=[1,50],$Vo=[11,31,32,33];
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"ALL_QUERIES":3,"QUERY":4,"SELECT_QUERY":5,"SELECT":6,"COLUMN_NAMES":7,"VALUES":8,"VALUE":9,",":10,"STRING":11,"$accept":0,"$end":1},
-terminals_: {2:"error",6:"SELECT",10:",",11:"STRING"},
-productions_: [0,[3,1],[4,1],[5,2],[7,1],[8,1],[8,3],[9,1]],
+symbols_: {"error":2,"ALL_QUERIES":3,"QUERY":4,"SELECT_QUERY":5,"SELECT":6,"COLUMN_NAMES":7,"FROM_CLAUSE":8,"GROUP_BY_CLAUSE":9,"WHERE_CLAUSE":10,"LIMIT_AND_ORDER_CLAUSES":11,"INTO_CLAUSE":12,"VALUES":13,"FROM":14,"TABLE_VALUE":15,"SIMPLE_TABLE_VALUE":16,"SIMPLE_NAME_VALUE":17,"TABLE_NAME_VALUE":18,"REGEX_VALUE":19,"SIMPLE_NAME":20,"TABLE_NAME":21,"VALUE":22,",":23,"GROUP":24,"BY":25,"FUNCTION_CALL":26,"WHERE":27,"CONDITION":28,"BOOL_EXPRESSION":29,"(":30,")":31,"AND":32,"OR":33,"BOOL_OPERATION":34,"OPERATION_EQUAL":35,"OPERATION_NE":36,"OPERATION_GT":37,"OPERATION_LT":38,"OPERATION_GE":39,"OPERATION_LE":40,"STRING_VALUE":41,"INT_VALUE":42,"FLOAT_VALUE":43,"DURATION_VALUE":44,"WILDCARD":45,"*":46,"/":47,"+":48,"-":49,"$accept":0,"$end":1},
+terminals_: {2:"error",6:"SELECT",11:"LIMIT_AND_ORDER_CLAUSES",12:"INTO_CLAUSE",14:"FROM",16:"SIMPLE_TABLE_VALUE",19:"REGEX_VALUE",20:"SIMPLE_NAME",21:"TABLE_NAME",23:",",24:"GROUP",25:"BY",26:"FUNCTION_CALL",27:"WHERE",29:"BOOL_EXPRESSION",30:"(",31:")",32:"AND",33:"OR",35:"OPERATION_EQUAL",36:"OPERATION_NE",37:"OPERATION_GT",38:"OPERATION_LT",39:"OPERATION_GE",40:"OPERATION_LE",41:"STRING_VALUE",42:"INT_VALUE",43:"FLOAT_VALUE",44:"DURATION_VALUE",45:"WILDCARD",46:"*",47:"/",48:"+",49:"-"},
+productions_: [0,[3,1],[4,1],[5,7],[7,1],[8,2],[8,2],[15,1],[15,1],[15,1],[17,1],[18,1],[13,1],[13,3],[9,3],[9,4],[9,0],[10,2],[10,0],[28,1],[28,3],[28,3],[28,3],[34,1],[34,1],[34,1],[34,1],[34,1],[34,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,3],[22,3],[22,3],[22,3],[22,3]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
@@ -98,7 +98,7 @@ break;
 case 3:
 
  			this.$ = {
-                COLUMN: $$[$0]
+                COLUMN: $$[$0-5]
  			};
         
 break;
@@ -107,26 +107,52 @@ case 4:
         	this.$ = $$[$0];
         
 break;
-case 5:
+case 5: case 6: case 10: case 11: case 14: case 15: case 19: case 21: case 22: case 30: case 31: case 37:
+
+
+        
+break;
+case 12:
 
           this.$ = [$$[$0]];
         
 break;
-case 6:
+case 13:
 
           this.$.push($$[$0-2]);
           this.$.push($$[$0]);
         
 break;
-case 7:
+case 16: case 18:
+
+          this.$ = NULL;
+        
+break;
+case 17:
+
+          this.$ = $$[$0];
+        
+break;
+case 20:
+
+          this.$ = $$[$0-1];
+        
+break;
+case 29:
 
           this.$ = yytext;
         
 break;
+case 39:
+  
+break;
+case 40:
+ 
+break;
 }
 },
-table: [{3:1,4:2,5:3,6:[1,4]},{1:[3]},{1:[2,1]},{1:[2,2]},{7:5,8:6,9:7,11:$V0},{1:[2,3]},{1:[2,4],10:[1,9]},o($V1,[2,5]),o($V1,[2,7]),{9:10,11:$V0},o($V1,[2,6])],
-defaultActions: {2:[2,1],3:[2,2],5:[2,3]},
+table: [{3:1,4:2,5:3,6:[1,4]},{1:[3]},{1:[2,1]},{1:[2,2]},{7:5,13:6,17:12,18:14,20:$V0,21:$V1,22:7,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},{8:19,14:[1,20]},{14:[2,4],23:$V9},o($Va,[2,12],{46:$Vb,47:$Vc,48:$Vd,49:$Ve}),o($Vf,[2,29]),o($Vf,[2,30]),o($Vf,[2,31]),o($Vf,[2,32]),o($Vf,[2,33]),o($Vf,[2,34]),o($Vf,[2,35]),o($Vf,[2,36]),{17:12,18:14,20:$V0,21:$V1,22:26,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},o($Vg,[2,10]),o($Vg,[2,11]),o($Vh,[2,16],{9:27,24:[1,28]}),{15:29,16:[1,30],17:31,18:32,19:[1,33],20:$V0,21:$V1},{17:12,18:14,20:$V0,21:$V1,22:34,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},{17:12,18:14,20:$V0,21:$V1,22:35,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},{17:12,18:14,20:$V0,21:$V1,22:36,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},{17:12,18:14,20:$V0,21:$V1,22:37,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},{17:12,18:14,20:$V0,21:$V1,22:38,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},{31:[1,39],46:$Vb,47:$Vc,48:$Vd,49:$Ve},{10:40,11:[2,18],27:[1,41]},{25:[1,42]},o($Vi,[2,5]),o($Vi,[2,6]),o($Vi,[2,7]),o($Vi,[2,8]),o($Vi,[2,9]),o($Va,[2,13],{46:$Vb,47:$Vc,48:$Vd,49:$Ve}),o($Vf,[2,38]),o($Vf,[2,39]),o($Vj,[2,40],{46:$Vb,47:$Vc}),o($Vj,[2,41],{46:$Vb,47:$Vc}),o($Vf,[2,37]),{11:[1,43]},{28:44,29:$Vk,30:$Vl},{13:47,17:12,18:14,20:$V0,21:$V1,22:7,26:$V2,30:$V3,41:$V4,42:$V5,43:$V6,44:$V7,45:$V8},{12:[1,48]},{11:[2,17],32:$Vm,33:$Vn},o($Vo,[2,19]),{28:51,29:$Vk,30:$Vl},o($Vh,[2,14],{23:$V9,26:[1,52]}),{1:[2,3]},{28:53,29:$Vk,30:$Vl},{28:54,29:$Vk,30:$Vl},{31:[1,55],32:$Vm,33:$Vn},o($Vh,[2,15]),o($Vo,[2,21]),o([11,31,33],[2,22],{32:$Vm}),o($Vo,[2,20])],
+defaultActions: {2:[2,1],3:[2,2],48:[2,3]},
 parseError: function parseError(str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -597,7 +623,7 @@ pushState:function pushState(condition) {
 stateStackSize:function stateStackSize() {
         return this.conditionStack.length;
     },
-options: {},
+options: {"case-insensitive":true},
 performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
@@ -615,7 +641,7 @@ case 5:return 'INNER'
 break;
 case 6:return 'JOIN'
 break;
-case 7:this.begin("FROM_CLAUSE"); return 'FROM'
+case 7:this.begin("FROM_CLAUSE"); return 14
 break;
 case 8: this.begin("IN_REGEX");   
 break;
@@ -667,9 +693,9 @@ case 24:return 'IN'
 break;
 case 25:return 'DESC'
 break;
-case 26:return 'GROUP'
+case 26:return 24
 break;
-case 27:return 'BY'
+case 27:return 25
 break;
 case 28:return 'INTO'
 break;
@@ -685,47 +711,47 @@ case 33:return yy_.yytext
 break;
 case 34:return yy_.yytext
 break;
-case 35:return 'AND'
+case 35:return 32
 break;
 case 36: return yy_.yytext; 
 break;
-case 37:return 'OR'
+case 37:return 33
 break;
 case 38:return 'REGEX_OP'
 break;
-case 39:return 'OPERATION_EQUAL'
+case 39:return 35
 break;
 case 40:return 'NEGATION_REGEX_OP'
 break;
-case 41:return 'OPERATION_NE'
+case 41:return 36
 break;
-case 42:return 'OPERATION_LT'
+case 42:return 38
 break;
-case 43:return 'OPERATION_GT'
+case 43:return 37
 break;
-case 44:return 'OPERATION_LE'
+case 44:return 40
 break;
-case 45:return 'OPERATION_GE'
+case 45:return 39
 break;
 case 46: return yy_.yytext; 
 break;
 case 47:/* skip whitespace */
 break;
-case 48:return 11
+case 48:return 41
 break;
 case 49:  return 'DURATION'; 
 break;
-case 50:  return 'FLOAT_VALUE'; 
+case 50:  return 43; 
 break;
 case 51: return "SIMPLE_NAME"; 
 break;
-case 52:return  "INTO_NAME";
+case 52:return  "TABLE_NAME";
 break;
 case 53:return 'EOF'
 break;
 }
 },
-rules: [/^(?:merge\b)/,/^(?:list\b)/,/^(?:series\b)/,/^(?:continuous query\b)/,/^(?:continuous queries\b)/,/^(?:inner\b)/,/^(?:join\b)/,/^(?:from\b)/,/^(?:\/)/,/^(?:\\\/)/,/^(?:\\)/,/^(?:\/)/,/^(?:\/i\b)/,/^(?:[^\\/]*)/,/^(?:where\b)/,/^(?:as\b)/,/^(?:select\b)/,/^(?:explain\b)/,/^(?:delete\b)/,/^(?:drop series\b)/,/^(?:drop\b)/,/^(?:limit\b)/,/^(?:order\b)/,/^(?:asc\b)/,/^(?:in\b)/,/^(?:desc\b)/,/^(?:group\b)/,/^(?:by\b)/,/^(?:into\b)/,/^(?:\()/,/^(?:\))/,/^(?:\+)/,/^(?:-)/,/^(?:\*)/,/^(?:\/)/,/^(?:and\b)/,/^(?:\.)/,/^(?:or\b)/,/^(?:=~)/,/^(?:=)/,/^(?:!~)/,/^(?:<>)/,/^(?:<)/,/^(?:>)/,/^(?:<=)/,/^(?:>=)/,/^(?:;)/,/^(?:\s+)/,/^(?:(['](\\.|[^']|\\')*?['])+)/,/^(?:([0-9]+|[0-9]*\.[0-9]+|[0-9]+\.[0-9]*)[usmhdw])/,/^(?:[0-9]*\.[0-9]+|[0-9]+\.[0-9]*)/,/^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]*)/,/^(?:[:\[a-zA-Z0-9_][:\[\]a-zA-Z0-9._-]*)/,/^(?:<\*><<EOF>>)/],
+rules: [/^(?:merge\b)/i,/^(?:list\b)/i,/^(?:series\b)/i,/^(?:continuous query\b)/i,/^(?:continuous queries\b)/i,/^(?:inner\b)/i,/^(?:join\b)/i,/^(?:from\b)/i,/^(?:\/)/i,/^(?:\\\/)/i,/^(?:\\)/i,/^(?:\/)/i,/^(?:\/i\b)/i,/^(?:[^\\/]*)/i,/^(?:where\b)/i,/^(?:as\b)/i,/^(?:select\b)/i,/^(?:explain\b)/i,/^(?:delete\b)/i,/^(?:drop series\b)/i,/^(?:drop\b)/i,/^(?:limit\b)/i,/^(?:order\b)/i,/^(?:asc\b)/i,/^(?:in\b)/i,/^(?:desc\b)/i,/^(?:group\b)/i,/^(?:by\b)/i,/^(?:into\b)/i,/^(?:\()/i,/^(?:\))/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\*)/i,/^(?:\/)/i,/^(?:and\b)/i,/^(?:\.)/i,/^(?:or\b)/i,/^(?:=~)/i,/^(?:=)/i,/^(?:!~)/i,/^(?:<>)/i,/^(?:<)/i,/^(?:>)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:;)/i,/^(?:\s+)/i,/^(?:(['](\\.|[^']|\\')*?['])+)/i,/^(?:([0-9]+|[0-9]*\.[0-9]+|[0-9]+\.[0-9]*)[usmhdw])/i,/^(?:[0-9]*\.[0-9]+|[0-9]+\.[0-9]*)/i,/^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]*)/i,/^(?:[:\[a-zA-Z0-9_][:\[\]a-zA-Z0-9._-]*)/i,/^(?:<\*><<EOF>>)/i],
 conditions: {"IN_REGEX":{"rules":[9,10,11,12,13],"inclusive":false},"FROM_CLAUSE":{"rules":[0,1,2,3,4,5,6,7,8,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53],"inclusive":true},"REGEX_CONDITION":{"rules":[0,1,2,3,4,5,6,7,8,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53],"inclusive":true},"INITIAL":{"rules":[0,1,2,3,4,5,6,7,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53],"inclusive":true}}
 });
 return lexer;
