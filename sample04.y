@@ -87,9 +87,52 @@ GROUP_BY_CLAUSE:
         }
         |
         {
-          $$ = NULL;
+          $$ = null;
         }
         ;
+LIMIT_AND_ORDER_CLAUSES:
+        ORDER_CLAUSE LIMIT_CLAUSE
+        {
+
+        }
+
+        ;
+ORDER_CLAUSE:
+        ORDER ASC
+        {
+          $$ = true;
+        }
+        |
+        ORDER DESC
+        {
+          $$ = false;
+        }
+        |
+        {
+          $$ = false;
+        }
+        ;
+ LIMIT_CLAUSE:
+         LIMIT INT_VALUE
+         {
+
+         }
+         |
+         {
+           $$ = -1;
+         }
+        ;
+INTO_CLAUSE:
+        INTO TABLE_VALUE
+        {
+
+        }
+        |
+        {
+          $$ = null;
+        }
+        ;
+
 WHERE_CLAUSE:
         WHERE CONDITION
         {
@@ -97,7 +140,7 @@ WHERE_CLAUSE:
         }
         |
         {
-          $$ = NULL;
+          $$ = null;
         }
         ;
 CONDITION:
