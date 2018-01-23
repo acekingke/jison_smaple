@@ -2,8 +2,8 @@
 
 %left  OR
 %left  AND
-%left  <character> '+' '-'
-%left  <character> '*' '/'
+%left  '+' '-'
+%left '*' '/'
 %%
 ALL_QUERIES:
         QUERY
@@ -217,7 +217,17 @@ VALUE:
         VALUE '-' VALUE {}
         ;
       
-
+FUNCTION_CALL:
+        SIMPLE_NAME '(' ')'
+        {
+        
+        }
+        |
+        SIMPLE_NAME '(' VALUES ')'
+        {
+         
+        }
+        ;
        
 
 %%
